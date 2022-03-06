@@ -1,18 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/calc"
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/input_number_text_view"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:textSize="40dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TableRow
+        android:layout_marginLeft="10dp">
+
+        <Button
+            android:id="@+id/clear_input_value_button"
+            android:layout_margin="5dp"
+            android:text="C" />
+
+        <Button
+            android:id="@+id/del_button"
+            android:layout_span="2"
+            android:layout_margin="5dp"
+            android:text="DEL" />
+
+        <Button
+            android:id="@+id/multiply_operation_button"
+            android:layout_margin="5dp"
+            android:text="*" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_marginLeft="10dp">
+
+        <Button
+            android:id="@+id/digit_seven_button"
+            android:layout_margin="5dp"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/digit_eight_button"
+            android:layout_margin="5dp"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/digit_nine_button"
+            android:layout_margin="5dp"
+            android:text="9" />
+
+        <Button
+            android:id="@+id/div_operation_button"
+            android:layout_margin="5dp"
+            android:text="/" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_marginLeft="10dp">
+
+        <Button
+            android:id="@+id/digit_four_button"
+            android:layout_margin="5dp"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/digit_five_button"
+            android:layout_margin="5dp"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/digit_six_button"
+            android:layout_margin="5dp"
+            android:text="6" />
+
+        <Button
+            android:id="@+id/deduct_operation_button"
+            android:layout_margin="5dp"
+            android:text="-" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_marginLeft="10dp">
+
+        <Button
+            android:id="@+id/digit_one_button"
+            android:layout_margin="5dp"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/digit_two_button"
+            android:layout_margin="5dp"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/digit_three_button"
+            android:layout_margin="5dp"
+            android:text="3" />
+
+        <Button
+            android:id="@+id/sum_operation_button"
+            android:layout_margin="5dp"
+            android:text="+" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_marginLeft="10dp">
+
+        <Button
+            android:id="@+id/digit_zero_button"
+            android:layout_span="2"
+            android:layout_margin="5dp"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/decimal_dot_button"
+            android:layout_margin="5dp"
+            android:text="." />
+
+        <Button
+            android:id="@+id/calc_result_button"
+            android:layout_margin="5dp"
+            android:text="=" />
+
+    </TableRow>
+
+</TableLayout>
