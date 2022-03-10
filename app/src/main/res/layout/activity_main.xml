@@ -1,135 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/calc"
+    android:columnCount="4"
+    android:useDefaultMargins="true"
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/input_number_text_view"
-        android:layout_height="150dp"
-        android:layout_gravity="center"
-        android:layout_margin="15dp"
-        android:background="@color/white"
-        android:textColor="@color/black"
-        android:textSize="40dp" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="4"
+        android:layout_gravity="fill_horizontal"
+        android:lines="4"
+        android:textSize="@dimen/text_size" />
 
-    <TableRow
-        android:layout_marginLeft="10dp">
+    <Button
+        android:id="@+id/clear_input_value_button"
+        android:layout_columnWeight="1"
+        android:text="@string/clear_input_value_btn" />
 
-        <Button
-            android:id="@+id/clear_input_value_button"
-            android:layout_margin="5dp"
-            android:text="C" />
+    <Button
+        android:id="@+id/del_button"
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal"
+        android:text="@string/del_btn" />
 
-        <Button
-            android:id="@+id/del_button"
-            android:layout_span="2"
-            android:layout_margin="5dp"
-            android:text="DEL" />
+    <Button
+        android:id="@+id/multiply_operation_button"
+        android:layout_columnWeight="1"
+        android:text="@string/multiply_operation_btn" />
 
-        <Button
-            android:id="@+id/multiply_operation_button"
-            android:layout_margin="5dp"
-            android:text="*" />
+    <Button
+        android:id="@+id/digit_seven_button"
+        android:layout_columnWeight="1"
+        android:text="@string/digit_seven_btn" />
 
-    </TableRow>
+    <Button
+        android:id="@+id/digit_eight_button"
+        android:layout_columnWeight="1"
+        android:text="@string/digit_eight_btn" />
 
-    <TableRow
-        android:layout_marginLeft="10dp">
+    <Button
+        android:id="@+id/digit_nine_button"
+        android:layout_columnWeight="1"
+        android:text="@string/digit_nine_btn" />
 
-        <Button
-            android:id="@+id/digit_seven_button"
-            android:layout_margin="5dp"
-            android:text="7" />
+    <Button
+        android:id="@+id/div_operation_button"
+        android:layout_columnWeight="1"
+        android:text="@string/div_operation_btn" />
 
-        <Button
-            android:id="@+id/digit_eight_button"
-            android:layout_margin="5dp"
-            android:text="8" />
+    <Button
+        android:id="@+id/digit_four_button"
+        android:layout_columnWeight="1"
+        android:text="@string/digit_four_btn" />
 
-        <Button
-            android:id="@+id/digit_nine_button"
-            android:layout_margin="5dp"
-            android:text="9" />
+    <Button
+        android:id="@+id/digit_five_button"
+        android:layout_columnWeight="1"
+        android:text="@string/digit_five_btn" />
 
-        <Button
-            android:id="@+id/div_operation_button"
-            android:layout_margin="5dp"
-            android:text="/" />
+    <Button
+        android:id="@+id/digit_six_button"
+        android:layout_columnWeight="1"
+        android:text="@string/digit_six_btn" />
 
-    </TableRow>
+    <Button
+        android:id="@+id/deduct_operation_button"
+        android:layout_columnWeight="1"
+        android:text="@string/deduct_operation_btn" />
 
-    <TableRow
-        android:layout_marginLeft="10dp">
+    <Button
+        android:id="@+id/digit_one_button"
+        android:layout_columnWeight="1"
+        android:text="@string/digit_one_btn" />
 
-        <Button
-            android:id="@+id/digit_four_button"
-            android:layout_margin="5dp"
-            android:text="4" />
+    <Button
+        android:id="@+id/digit_two_button"
+        android:layout_columnWeight="1"
+        android:text="@string/digit_two_btn" />
 
-        <Button
-            android:id="@+id/digit_five_button"
-            android:layout_margin="5dp"
-            android:text="5" />
+    <Button
+        android:id="@+id/digit_three_button"
+        android:layout_columnWeight="1"
+        android:text="@string/digit_three_btn" />
 
-        <Button
-            android:id="@+id/digit_six_button"
-            android:layout_margin="5dp"
-            android:text="6" />
+    <Button
+        android:id="@+id/sum_operation_button"
+        android:layout_columnWeight="1"
+        android:text="@string/sum_operation_btn" />
 
-        <Button
-            android:id="@+id/deduct_operation_button"
-            android:layout_margin="5dp"
-            android:text="-" />
+    <Button
+        android:id="@+id/digit_zero_button"
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal"
+        android:text="@string/digit_zero_btn" />
 
-    </TableRow>
+    <Button
+        android:id="@+id/decimal_dot_button"
+        android:layout_columnWeight="1"
+        android:text="@string/decimal_dot_btn" />
 
-    <TableRow
-        android:layout_marginLeft="10dp">
+    <Button
+        android:id="@+id/calc_result_button"
+        android:layout_columnWeight="1"
+        android:text="@string/calc_result_btn" />
 
-        <Button
-            android:id="@+id/digit_one_button"
-            android:layout_margin="5dp"
-            android:text="1" />
-
-        <Button
-            android:id="@+id/digit_two_button"
-            android:layout_margin="5dp"
-            android:text="2" />
-
-        <Button
-            android:id="@+id/digit_three_button"
-            android:layout_margin="5dp"
-            android:text="3" />
-
-        <Button
-            android:id="@+id/sum_operation_button"
-            android:layout_margin="5dp"
-            android:text="+" />
-
-    </TableRow>
-
-    <TableRow
-        android:layout_marginLeft="10dp">
-
-        <Button
-            android:id="@+id/digit_zero_button"
-            android:layout_span="2"
-            android:layout_margin="5dp"
-            android:text="0" />
-
-        <Button
-            android:id="@+id/decimal_dot_button"
-            android:layout_margin="5dp"
-            android:text="." />
-
-        <Button
-            android:id="@+id/calc_result_button"
-            android:layout_margin="5dp"
-            android:text="=" />
-
-    </TableRow>
-
-</TableLayout>
+</GridLayout>
