@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_columnSpan="4"
         android:layout_gravity="fill_horizontal"
-        android:lines="4"
+        android:lines="2"
         android:textSize="@dimen/text_size" />
 
     <Button

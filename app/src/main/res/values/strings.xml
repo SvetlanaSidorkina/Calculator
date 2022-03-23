@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Calculator</string>
+    <string name="clear_input_value_btn">C</string>
+    <string name="del_btn">DEL</string>
+    <string name="multiply_operation_btn">*</string>
+    <string name="digit_seven_btn">7</string>
+    <string name="digit_eight_btn">8</string>
+    <string name="digit_nine_btn">9</string>
+    <string name="div_operation_btn">/</string>
+    <string name="digit_four_btn">4</string>
+    <string name="digit_five_btn">5</string>
+    <string name="digit_six_btn">6</string>
+    <string name="deduct_operation_btn">-</string>
+    <string name="digit_one_btn">1</string>
+    <string name="digit_two_btn">2</string>
+    <string name="digit_three_btn">3</string>
+    <string name="sum_operation_btn">+</string>
+    <string name="digit_zero_btn">0</string>
+    <string name="decimal_dot_btn">.</string>
+    <string name="calc_result_btn">=</string>
 </resources>
