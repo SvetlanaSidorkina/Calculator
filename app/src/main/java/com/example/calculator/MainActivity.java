@@ -8,6 +8,8 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private TextView textInput;
+    float number1, number2;
+    char operator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +37,45 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void onClickAction() {
-        findViewById(R.id.decimal_dot_button).setOnClickListener(view -> textInput.setText(textInput.getText() + "."));
-        findViewById(R.id.multiply_operation_button).setOnClickListener(view -> textInput.setText(textInput.getText() + "*"));
-        findViewById(R.id.div_operation_button).setOnClickListener(view -> textInput.setText(textInput.getText() + "/"));
-        findViewById(R.id.deduct_operation_button).setOnClickListener(view -> textInput.setText(textInput.getText() + "-"));
-        findViewById(R.id.sum_operation_button).setOnClickListener(view -> textInput.setText(textInput.getText() + "+"));
+        findViewById(R.id.multiply_operation_button).setOnClickListener(view -> {
+            if (textInput == null) {
+                textInput.setText("");
+            } else {
+                number1 = Float.parseFloat(textInput.getText() + "");
+                textInput.setText(textInput.getText() + "*");
+                operator = '*';
+            }
+        });
+
+        findViewById(R.id.div_operation_button).setOnClickListener(view -> {
+            if (textInput == null) {
+                textInput.setText("");
+            } else {
+                number1 = Float.parseFloat(textInput.getText() + "");
+                textInput.setText(textInput.getText() + "/");
+                operator = '/';
+            }
+        });
+
+        findViewById(R.id.deduct_operation_button).setOnClickListener(view -> {
+            if (textInput == null) {
+                textInput.setText("");
+            } else {
+                number1 = Float.parseFloat(textInput.getText() + "");
+                textInput.setText(textInput.getText() + "-");
+                operator = '-';
+            }
+        });
+
+        findViewById(R.id.sum_operation_button).setOnClickListener(view -> {
+            if (textInput == null) {
+                textInput.setText("");
+            } else {
+                number1 = Float.parseFloat(textInput.getText() + "");
+                textInput.setText(textInput.getText() + "+");
+                operator = '+';
+            }
+        });
 
         findViewById(R.id.clear_input_value_button).setOnClickListener(view -> {
             String str = textInput.getText().toString();
@@ -53,10 +89,31 @@ public class MainActivity extends AppCompatActivity {
             if (str.length() > 0) {
                 str = str.substring(0, str.length() - 1);
                 textInput.setText(str);
-            };
+            }
         });
 
-        findViewById(R.id.calc_result_button);
+        findViewById(R.id.decimal_dot_button).setOnClickListener(view -> textInput.setText(textInput.getText() + "."));
+
+        findViewById(R.id.calc_result_button).setOnClickListener(view -> {
+            String str = textInput.getText().toString();
+            number2 = Float.parseFloat(str.substring(str.lastIndexOf(operator) + 1));
+            switch (operator) {
+                case '+':
+                    textInput.setText(number1 + number2 + "");
+                    break;
+                case '-':
+                    textInput.setText(number1 - number2 + "");
+                    break;
+                case '*':
+                    textInput.setText(number1 * number2 + "");
+                    break;
+                case '/':
+                    textInput.setText(number1 / number2 + "");
+                    break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + operator);
+            }
+        });
     }
 
 }
