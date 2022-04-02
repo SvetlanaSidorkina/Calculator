@@ -99,16 +99,16 @@ public class MainActivity extends AppCompatActivity {
             number2 = Float.parseFloat(str.substring(str.lastIndexOf(operator) + 1));
             switch (operator) {
                 case '+':
-                    textInput.setText(number1 + number2 + "");
+                    textInput.setText(new StringBuilder().append(Calc.add(number1, number2)));
                     break;
                 case '-':
-                    textInput.setText(number1 - number2 + "");
+                    textInput.setText(new StringBuilder().append(Calc.deduct(number1, number2)));
                     break;
                 case '*':
-                    textInput.setText(number1 * number2 + "");
+                    textInput.setText(new StringBuilder().append(Calc.multiply(number1, number2)));
                     break;
                 case '/':
-                    textInput.setText(number1 / number2 + "");
+                    textInput.setText(new StringBuilder().append(Calc.div(number1, number2)));
                     break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + operator);
