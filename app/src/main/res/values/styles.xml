@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CalcButtonStyle">
+        <item name="android:layout_margin">@dimen/margin_btn</item>
+        <item name="cornerRadius">@dimen/calc_button_radius</item>
+        <item name="strokeWidth">@dimen/calc_button_radius_width</item>
+        <item name="android:textSize">@dimen/calc_button_text_size</item>
+    </style>
+    <style name="CalcButtonStyle.Numbers">
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="strokeColor">@color/black</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="CalcButtonStyle.Actions">
+        <item name="android:backgroundTint">@color/black</item>
+        <item name="strokeColor">@color/white</item>
+    </style>
+</resources>
