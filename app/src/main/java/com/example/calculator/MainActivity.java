@@ -8,7 +8,8 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private TextView textInput;
-    float number1, number2;
+    private double number1;
+    private double number2;
     char operator;
 
     @Override
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             if (textInput == null) {
                 textInput.setText("");
             } else {
-                number1 = Float.parseFloat(textInput.getText() + "");
+                number1 = Double.parseDouble(textInput.getText() + "");
                 textInput.setText(textInput.getText() + "*");
                 operator = '*';
             }
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             if (textInput == null) {
                 textInput.setText("");
             } else {
-                number1 = Float.parseFloat(textInput.getText() + "");
+                number1 = Double.parseDouble(textInput.getText() + "");
                 textInput.setText(textInput.getText() + "/");
                 operator = '/';
             }
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             if (textInput == null) {
                 textInput.setText("");
             } else {
-                number1 = Float.parseFloat(textInput.getText() + "");
+                number1 = Double.parseDouble(textInput.getText() + "");
                 textInput.setText(textInput.getText() + "-");
                 operator = '-';
             }
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             if (textInput == null) {
                 textInput.setText("");
             } else {
-                number1 = Float.parseFloat(textInput.getText() + "");
+                number1 = Double.parseDouble(textInput.getText() + "");
                 textInput.setText(textInput.getText() + "+");
                 operator = '+';
             }
@@ -96,19 +97,21 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.calc_result_button).setOnClickListener(view -> {
             String str = textInput.getText().toString();
-            number2 = Float.parseFloat(str.substring(str.lastIndexOf(operator) + 1));
+            number2 = Double.parseDouble(str.substring(str.lastIndexOf(operator) + 1));
+            Calc result = new Calc(number1, number2);
+
             switch (operator) {
                 case '+':
-                    textInput.setText(new StringBuilder().append(Calc.add(number1, number2)));
+                    textInput.setText(new StringBuilder().append(result.add()));
                     break;
                 case '-':
-                    textInput.setText(new StringBuilder().append(Calc.deduct(number1, number2)));
+                    textInput.setText(new StringBuilder().append(result.deduct()));
                     break;
                 case '*':
-                    textInput.setText(new StringBuilder().append(Calc.multiply(number1, number2)));
+                    textInput.setText(new StringBuilder().append(result.multiply()));
                     break;
                 case '/':
-                    textInput.setText(new StringBuilder().append(Calc.div(number1, number2)));
+                    textInput.setText(new StringBuilder().append(result.div()));
                     break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + operator);
