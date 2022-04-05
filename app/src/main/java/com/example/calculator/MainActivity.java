@@ -1,5 +1,6 @@
 package com.example.calculator;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TEXTVIEW_KEY = "TEXTVIEW_KEY";
     private TextView textInput;
     private double number1;
     private double number2;
@@ -19,8 +21,19 @@ public class MainActivity extends AppCompatActivity {
 
         textInput = findViewById(R.id.input_text);
 
+        if (savedInstanceState != null) {
+            textInput.setText(savedInstanceState.getString(TEXTVIEW_KEY));
+        }
+
         onClickNumber();
         onClickAction();
+
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putString(TEXTVIEW_KEY, (String) textInput.getText());
+        super.onSaveInstanceState(outState);
 
     }
 
