@@ -13,8 +13,11 @@
         android:layout_height="wrap_content"
         android:layout_columnSpan="4"
         android:layout_gravity="fill_horizontal"
-        android:lines="4"
-        style="@style/CalcTextViewStyle" />
+        android:layout_margin="@dimen/margin_btn"
+        android:background="@color/white"
+        android:lines="2"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/clear_input_value_button"
@@ -127,12 +130,4 @@
         style="@style/CalcButtonStyle.Actions"
         android:layout_columnWeight="1"
         android:text="@string/calc_result_btn" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/calc_selection_theme"
-        android:layout_columnSpan="4"
-        android:layout_columnWeight="@integer/material_motion_duration_long_1"
-        style="@style/CalcButtonStyle.Actions"
-        android:text="@string/calc_selection_theme" />
-
 </GridLayout>
