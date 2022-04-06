@@ -18,4 +18,7 @@
     <string name="digit_zero_btn">0</string>
     <string name="decimal_dot_btn">.</string>
     <string name="calc_result_btn">=</string>
+    <string name="theme_one">One</string>
+    <string name="theme_two">Two</string>
+    <string name="calc_selection_theme">Выбор темы</string>
 </resources>

@@ -1,14 +1,25 @@
 package com.example.calculator;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
+
+import com.example.calculator.storage.Theme;
+import com.example.calculator.storage.ThemeStorage;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TEXTVIEW_KEY = "TEXTVIEW_KEY";
+
     private TextView textInput;
     private double number1;
     private double number2;
@@ -24,6 +35,37 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState != null) {
             textInput.setText(savedInstanceState.getString(TEXTVIEW_KEY));
         }
+
+        ThemeStorage storage = ThemeStorage.getInstance(getApplicationContext());
+
+        Theme savedTheme = storage.getTheme();
+
+        ActivityResultLauncher<Intent> launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+            @Override
+            public void onActivityResult(ActivityResult result) {
+                if (result.getResultCode() == Activity.RESULT_OK) {
+                    Intent data = result.getData();
+
+                    Theme chosenTheme = (Theme) data.getSerializableExtra(ThemeSelectionActivity.CHOSEN_THEME);
+
+                    storage.saveTheme(chosenTheme);
+
+                    recreate();
+                }
+            }
+        });
+
+        setTheme(savedTheme.getTheme());
+
+        findViewById(R.id.calc_selection_theme).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ThemeSelectionActivity.class);
+                intent.putExtra(ThemeSelectionActivity.SELECTED_THEME, savedTheme);
+
+                launcher.launch(intent);
+            }
+        });
 
         onClickNumber();
         onClickAction();

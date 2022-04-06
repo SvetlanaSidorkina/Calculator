@@ -5,7 +5,10 @@
       <map>
         <entry key="..\:/Users/HONOR/AndroidStudioProjects/Calculator1/app/src/main/res/layout-land/aclivity_main.xml" value="0.176" />
         <entry key="..\:/Users/HONOR/AndroidStudioProjects/Calculator1/app/src/main/res/layout-land/activity_main.xml" value="0.1954954954954955" />
-        <entry key="..\:/Users/HONOR/AndroidStudioProjects/Calculator1/app/src/main/res/layout/activity_main.xml" value="0.2359375" />
+        <entry key="..\:/Users/HONOR/AndroidStudioProjects/Calculator1/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/HONOR/AndroidStudioProjects/Calculator1/app/src/main/res/layout/activity_selection_theme.xml" value="0.2359375" />
+        <entry key="..\:/Users/HONOR/AndroidStudioProjects/Calculator1/app/src/main/res/layout/activity_theme_selection.xml" value="0.2359375" />
+        <entry key="..\:/Users/HONOR/AndroidStudioProjects/Calculator1/app/src/main/res/layout/item_theme.xml" value="0.2359375" />
       </map>
     </option>
   </component>
